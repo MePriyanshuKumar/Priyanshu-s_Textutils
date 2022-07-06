@@ -15,7 +15,7 @@ function App() {
       type: type
     })
     setTimeout(() => {
-      setAlert(null); 
+      setAlert(null);
     }, 1500);
   }
   const toggleMode = () => {
@@ -23,10 +23,20 @@ function App() {
       setMode('dark');
       document.body.style.backgroundColor = 'grey';
       showAlert("Dark mode is enabled", "success");
+      document.title = "TextUtils - Dark Mode";
+
+      // setInterval(() => {
+      //   document.title = "TextUTils is amazing application"
+      // }, 2000);
+      
+      // setInterval(() => {
+      //   document.title = "Install textutils now..."
+      // }, 1500);
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode is enabled", "success");
+      document.title = "TextUtils - Light Mode";
     }
   }
   return (
