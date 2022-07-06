@@ -25,10 +25,12 @@ export default function TextForm(props) {
         var text = document.getElementById("myBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text copied to clipboard successfully!", "success");
     }
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.showAlert(" Extra spaces removed!", "success");
     }
     const handleClearClick = () => {
         // console.log("Uppercase was clicked: " +  text);
