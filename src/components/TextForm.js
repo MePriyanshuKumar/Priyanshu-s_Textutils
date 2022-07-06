@@ -15,12 +15,7 @@ export default function TextForm(props) {
         props.showAlert("Converted to lowerCase!", "success");
 
     }
-    const handleClearClick = () => {
-        // console.log("Uppercase was clicked: " +  text);
-        let newText = '';
-        setText(newText);
 
-    }
     const handleOnChange = (event) => {
         // console.log("On change");
         setText(event.target.value)
@@ -34,6 +29,13 @@ export default function TextForm(props) {
     const handleExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+    }
+    const handleClearClick = () => {
+        // console.log("Uppercase was clicked: " +  text);
+        let newText = '';
+        setText(newText);
+        props.showAlert("Text cleared!", "success");
+
     }
 
 
@@ -50,9 +52,9 @@ export default function TextForm(props) {
                 </div>
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear Text</button>
-                <button className="btn btn-primary mx-2" onClick={handleCopy}> Copy Text</button>
                 <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}> Remove extra Spaces</button>
+                <button className="btn btn-primary mx-2" onClick={handleCopy}> Copy Text</button>
+                <button className="btn btn-primary mx-2" onClick={handleClearClick}> Clear Text</button>
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h1>Your text Summary</h1>
