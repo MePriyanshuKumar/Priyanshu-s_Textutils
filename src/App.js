@@ -24,8 +24,6 @@ function App() {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode is enabled", "success");
-
-
     }
   }
   return (
@@ -34,7 +32,7 @@ function App() {
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
-        <TextForm heading="Enter the text to analyze" mode={mode} />
+        <TextForm showAlert={showAlert} heading="Enter the text to analyze" mode={mode} />
         {/* <About/> */}
       </div>
 
